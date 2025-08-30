@@ -11,14 +11,11 @@ table {
   background-color: black;
   padding: 8px;
   display: inline-block;
-}
-
-.middle {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
+  margin: 20x auto;
+  text-align: center;
 }
   
+
 
 
 
