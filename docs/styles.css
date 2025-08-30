@@ -12,10 +12,11 @@ table
   color: white;
   background-color: black;
   padding: 8px;
-  display: inline-box;
+  display: inline-block;
 }
 
 .middle {
   text-align: center;
 }
   
+
