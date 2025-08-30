@@ -1,10 +1,8 @@
-﻿body
-{
+﻿body {
 
 }
 
-table
-{
+table {
   background-color: yellow;
 }
 
@@ -16,7 +14,10 @@ table
 }
 
 .middle {
-  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
 }
   
+
 
