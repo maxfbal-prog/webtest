@@ -7,3 +7,15 @@ table
 {
   background-color: yellow;
 }
+
+.square {
+  color: white;
+  background-color: black;
+  padding: 8px;
+  display: inline-box;
+}
+
+.middle {
+  text-align: center;
+}
+  
