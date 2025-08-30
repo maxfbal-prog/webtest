@@ -14,7 +14,18 @@ table {
   margin: 20px auto;
   text-align: center;
 }
-  
+
+.box h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.box h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
 
 
 
