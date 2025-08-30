@@ -6,7 +6,7 @@ table {
   background-color: yellow;
 }
 
-.square {
+.box {
   color: white;
   background-color: black;
   padding: 8px;
@@ -19,5 +19,6 @@ table {
   width: fit-content;
 }
   
+
 
 
