@@ -1,10 +1,21 @@
 ﻿body {
 }
 
+/* Determines how table looks  */
 table {
     background-color: #FCDB03;
+    text-align: left;
+    border: 1.5px solid black; /* Controls thickness of table outer border lines */
+    border-collapse: collapse;
 }
 
+/* Helps with border colors and padding in cells*/
+th, td {
+    border: 1.5px solid black; /* Controls thickness of table inner border lines */
+    padding: 4px;
+}
+
+/* Black box parameters */
 .box {
     color: white;
     background-color: black;
@@ -13,7 +24,7 @@ table {
     margin: 20px auto;
     text-align: center;
 }
-
+/* The following .box are for changing spacing between text in black box*/
 .box h1 {
     margin-top: 0;
     margin-bottom: 24px;
