@@ -24,7 +24,7 @@ th, td {
     margin: 20px auto;
     text-align: center;
 }
-/* The following .box are for changing spacing between text in black box*/
+/* The following two .box are for changing spacing between text in black box*/
 .box h1 {
     margin-top: 0;
     margin-bottom: 24px;
@@ -34,6 +34,7 @@ th, td {
     margin-top: 0;
     margin-bottom: 8px;
 }
+
 
 
 
