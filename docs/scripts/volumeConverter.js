@@ -21,11 +21,11 @@ function setUnits(unit) {
 }
 
 function validation(value, isLitres) {
-    if (isLitres && value > 4000) {
+    if (isLitres && value > 1000) {
         return false;
     }
 
-    if (!isLitres && value > 1000) {
+    if (!isLitres && value > 4000) {
         return false;
     }
     return true;
@@ -59,4 +59,5 @@ function convertToGallons(volumeInLitres) {
     document.getElementById("answer").innerHTML =
         volumeInLitres + " Litres converts to " +
         gallonsVolume.toFixed(1) + " Gallons";
+
 }
