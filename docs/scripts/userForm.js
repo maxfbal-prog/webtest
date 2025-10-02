@@ -33,46 +33,25 @@ function checkUserForm() {
     }
 }
 
-function saveUserForm() {
-    if (checkUserForm()) {
+$(document).on("submit", "#frmUserForm", function(e) {
+    e.preventDefault();
 
-            var newPassword = $("#changePassword").val();
-            if (!newPassword) {
-                newPassword = "2345";
-            }
+    if (checkUserForm()) {
         var user = {
-            "FirstName": $("#txtFirstName").val(),
-            "LastName": $("#txtLastName").val(),
-            "HealthCardNumber": $("#txtHealthCardNumber").val(),
-            "NewPassword": newPassword,
-            "DOB": $("#datBirthdate").val()
+            FirstName: $("#txtFirstName").val(),
+            LastName: $("#txtLastName").val(),
+            DOB: $("#datBirthdate").val(),
+            HealthCardNumber: $("#txtHealthCardNumber").val(),
+            NewPassword: $("#changePassword").val() || "2345"
         };
 
-        try {
-            localStorage.setItem("user", JSON.stringify(user));
-            alert("Saving Information");
-            $.mobile.changePage("#pageMenu");
-        }
-        catch (e) {
-            /* Google browsers use different error
-            * constant
-            */
-            if (window.navigator.vendor === "Google Inc") {
-                if (e == DOMException.QUOTA_EXCEEDED_ERR) {
-                    alert("Error: Local Storage limit exceeded.");
-                }
-            }
-            else if (e == QUOTA_EXCEEDED_ERR) {
-                alert("Error: Saving to local storage failed.");
-            }
-
-            console.log(e);
-        }
+        localStorage.setItem("user", JSON.stringify(user));
+        alert("Information saved!");
+        $.mobile.changePage("#pageMenu");
+    } else {
+        alert("Please complete all fields correctly.");
     }
-    else {
-        alert("Please complete the form properly.");
-    }
-}
+});
 
 function showUserForm() {
     //Load the stored values in the form
@@ -103,4 +82,5 @@ function showUserForm() {
         $("#datBirthdate").val(user.DOB);
     }
 }
+
 
