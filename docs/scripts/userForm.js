@@ -2,11 +2,12 @@
 
 $(document).on("click", "#noticeYes", function () {
     localStorage.setItem("agreedToLegal", "true");
-});
-
-$(document).on("submit", "#frmUserForm", function (e) {
-    e.preventDefault();
-    saveUserForm();
+    var user = JSON.parse(localStorage.getItem("user"));
+    if (!user.FirstName || !user.LastName) {
+        $.mobile.changePage("#pageUserInfo");
+    } else {
+        $.mobile.changePage("#pageMenu");
+    }
 });
 
 function checkUserForm() {
@@ -102,3 +103,4 @@ function showUserForm() {
         $("#datBirthdate").val(user.DOB);
     }
 }
+
