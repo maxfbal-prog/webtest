@@ -1,0 +1,17 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.panel-heading {
+    background-color: #dcf7cd; 
+    color: #63a63f; 
+    font-size: 16px;
+    padding: 0.5px;
+}
+
+.panel-body {
+    padding: 25px;
+}
+
+.centered { text-align: center; }
