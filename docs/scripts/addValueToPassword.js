@@ -1,3 +1,20 @@
+// Ensure there is always a default user object in localStorage
+if (!localStorage.getItem("user")) {
+    localStorage.setItem("user", JSON.stringify({
+        FirstName: "",
+        LastName: "",
+        DOB: "",
+        HealthCardNumber: "",
+        NewPassword: "2345" // default password for first login
+    }));
+}
+
+// Ensure legal agreement flag exists
+if (!localStorage.getItem("agreedToLegal")) {
+    localStorage.setItem("agreedToLegal", "false");
+}
+//STOP
+
 /* Adds given text value to the password text
 * field
 */
@@ -20,21 +37,21 @@ $(document).on("click", "#btnEnter", function () {
     var password = getPassword(); 
 
     if (entered === password) {
-        if (localStorage.getItem("agreedToLegal") == null) {
+        if (localStorage.getItem("agreedToLegal") !== "true") {
             $.mobile.changePage("#legalNotice");
-        }
-        else if (localStorage.getItem("agreedToLegal") == "true") {
-            if (localStorage.getItem("user") == null) {
-                /* User has not been created, direct user
-                * to User Creation page
-                */
+        } 
+        else {
+            var user = JSON.parse(localStorage.getItem("user"));
+            if (!user.FirstName || !user.LastName) {
+                // User info not complete
                 $.mobile.changePage("#pageUserInfo");
-            }
+            } 
             else {
+                // All good, go to menu
                 $.mobile.changePage("#pageMenu");
             }
         }
-    }
+    } 
     else {
         alert("Incorrect password, please try again.");
     }
@@ -42,14 +59,10 @@ $(document).on("click", "#btnEnter", function () {
 
 // Retrieves password from local storage if it exists, otherwise returns the default password
 function getPassword() {
-    if (typeof (Storage) == "undefined") {
-        alert("Your browser does not support HTML5 localStorage. Try upgrading");
-    }
-    else if (localStorage.getItem("user") != null) {
-        return JSON.parse(localStorage.getItem("user")).NewPassword;
-    }
-    else {
-        // Default password
+    var user = JSON.parse(localStorage.getItem("user"));
+    if (!user || !user.NewPassword) {
+        // Fallback in case storage is missing or corrupted
         return "2345";
     }
+    return user.NewPassword;
 }
