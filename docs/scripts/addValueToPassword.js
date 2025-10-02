@@ -13,7 +13,7 @@ if (!localStorage.getItem("user")) {
 if (!localStorage.getItem("agreedToLegal")) {
     localStorage.setItem("agreedToLegal", "false");
 }
-//STOP
+//STOP please
 
 /* Adds given text value to the password text
 * field
@@ -66,3 +66,4 @@ function getPassword() {
     }
     return user.NewPassword;
 }
+
