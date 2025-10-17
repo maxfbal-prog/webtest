@@ -1,0 +1,21 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.panel-heading {
+    background-color: #dcf7cd; 
+    color: #63a63f; 
+    font-size: 16px;
+    padding: 0.5px;
+}
+
+.panel-body {
+    padding: 25px;
+}
+
+/* makes table look nicer, otherwise date and blood pressure are too close together */
+#tblRecords td,
+#tblRecords th {
+    padding: 8px 20px;
+}
